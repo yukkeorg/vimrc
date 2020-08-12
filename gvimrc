@@ -1,9 +1,9 @@
 "=== Gui(GVim) Settings =============================================================
 "colorscheme leo
 "colorscheme koehler
-set background=dark
-colorscheme hybrid
 "colorscheme badwolf
+colorscheme onedark
+set background=dark
 
 set columns=130
 set lines=30

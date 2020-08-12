@@ -148,6 +148,7 @@ Plug 'w0ng/vim-hybrid'
 "Plug 'fenetikm/falcon'
 Plug 'sainnhe/edge'
 Plug 'cocopon/iceberg.vim'
+Plug 'joshdick/onedark.vim'
 
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -215,9 +216,9 @@ if has('gui_running')
 endif
 
 " Auto Completion
-" inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <expr><cr> pumvisible() ? "\<C-y>" : "\<cr>"
+" inoremap <expr><Tab> pumvisible() ? '\<C-n>' : '\<Tab>'
+" inoremap <expr><S-Tab> pumvisible() ? '\<C-p>' : '\<S-Tab>'
+" inoremap <expr><cr> pumvisible() ? '\<C-y>' : '\<cr>'
 
 "=== Keymap (Insert) ======================================================
 
@@ -231,19 +232,22 @@ if !has('win32')
 endif
 "
 "=== ColorScheme ==========================================================
-set termguicolors
+colorscheme onedark
 set background=dark
-let g:edge_style = 'default'
-let g:edge_disable_italic_comment = 1
-colorscheme iceberg
+set termguicolors
+
+if g:colors_name == 'edge'
+  let g:edge_style = 'default'
+  let g:edge_disable_italic_comment = 1
+endif
 
 syntax on
 filetype plugin indent on
 
 "highlight LineNr      ctermfg=240 guibg=#303030
 "highlight ColorColumn ctermbg=242 guibg=#6c6c6c
-highlight SpecialKey  ctermfg=242 guifg=NONE
-highlight NonText     ctermfg=Gray guifg=NONE
+"highlight SpecialKey  ctermfg=242 guifg=NONE
+"highlight NonText     ctermfg=Gray guifg=NONE
 
 "=== Printer =============================================================
 " プリンターの設定
