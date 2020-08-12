@@ -87,12 +87,12 @@ let g:extra_whitespace_ignored_filetypes = [
 " autocmd VimEnter * NERDTree
 " autocmd VimEnter * wincmd p
 
-let g:indentLine_color_term = 245
+"let g:indentLine_color_term = 245
 
 " GUI版VIM時のlightLineの設定
-"let g:lightline = {
-"          \ 'colorscheme': 'wombat'
-"          \ }
+let g:lightline = {
+          \ 'colorscheme': 'onedark'
+          \ }
 
 " vim-go
 "let g:go_fmt_command = 'gofmt'
