@@ -91,8 +91,8 @@ let g:extra_whitespace_ignored_filetypes = [
 
 " GUI版VIM時のlightLineの設定
 let g:lightline = {
-          \ 'colorscheme': 'onedark'
-          \ }
+  \ 'colorscheme': 'onedark'
+  \ }
 
 " vim-go
 "let g:go_fmt_command = 'gofmt'
@@ -139,13 +139,9 @@ let g:syntastic_javascript_checkers = ['eslint']
 "=== Plugins =================================================================
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-scripts/wombat256.vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'tomasr/molokai'
 Plug 'sjl/badwolf'
-Plug 'lifepillar/vim-solarized8'
 Plug 'w0ng/vim-hybrid'
-"Plug 'fenetikm/falcon'
 Plug 'sainnhe/edge'
 Plug 'cocopon/iceberg.vim'
 Plug 'joshdick/onedark.vim'
@@ -161,23 +157,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'
-"Plug 'koron/imcsc-vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
-"Plug 'thinca/vim-quickrun'
-"Plug 'rking/ag.vim'
 
-"Plug 'davidhalter/jedi-vim'
-"Plug 'fatih/vim-go'
-
-"Plug 'ryanolsonx/vim-lsp-python'
-"Plug 'mattn/vim-goimports'
-
-"Plug 'vim-syntastic/syntastic'
 Plug 'tkztmk/vim-vala'
 Plug 'leafgarland/typescript-vim'
 Plug 'chase/vim-ansible-yaml'
-"Plug 'nvie/vim-flake8'
 Plug 'posva/vim-vue'
 Plug 'elzr/vim-json'
 Plug 'udalov/kotlin-vim'
@@ -210,7 +195,7 @@ nmap * *zz
 nmap # *zz
 
 " ショートカット
-nmap <F12>   :tabnew $MYVIMRC<CR>
+nmap <F12> :tabnew $MYVIMRC<CR>
 if has('gui_running')
   nmap <S-F12> :tabnew $MYGVIMRC<CR>
 endif
@@ -234,7 +219,10 @@ endif
 "=== ColorScheme ==========================================================
 colorscheme onedark
 set background=dark
-set termguicolors
+
+if has('termguicolors')
+  set termguicolors
+endif
 
 if g:colors_name == 'edge'
   let g:edge_style = 'default'
@@ -254,7 +242,6 @@ filetype plugin indent on
 if has('printer')
   set printoptions=paper:A4,left:15mm,right:15mm,top:20mm,bottom:20mm
   if has('win32')
-    "set printfont=MS_Mincho:h12:cSHIFTJIS
     set printfont=MS_Gothic:h10:cSHIFTJIS
   endif
 endif
