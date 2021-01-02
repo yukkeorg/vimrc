@@ -1,9 +1,12 @@
 " vim: et ts=2 sts=2 sw=2 tw=0
-
-"=== Global Settings ======================================================
+"=== Initialize ===========================================================
 scriptencoding utf-8
 set encoding=utf-8
 set nocompatible
+filetype off
+filetype plugin indent off
+
+"=== Global Settings ======================================================
 
 " VIMの動作
 set ambiwidth=double
@@ -19,14 +22,12 @@ set nobackup
 set noswapfile
 if has('win32')
   set directory=
-else
-
 endif
 
 " タブ関連
 set tabstop=8
 set shiftwidth=2
-set softtabstop=2
+set softtabstop=-1
 set expandtab
 set smarttab
 
@@ -74,7 +75,42 @@ set pumheight=10
 set synmaxcol=300
 set completeopt=menuone,noinsert
 
+"=== Plugins =================================================================
+call plug#begin('~/.vim/plugged')
+
+Plug 'altercation/vim-colors-solarized'
+Plug 'sjl/badwolf'
+Plug 'w0ng/vim-hybrid'
+Plug 'sainnhe/edge'
+Plug 'cocopon/iceberg.vim'
+Plug 'joshdick/onedark.vim'
+
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
+Plug 'Yggdroot/indentLine'
+Plug 'airblade/vim-gitgutter'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'mattn/emmet-vim'
+"Plug 'scrooloose/nerdtree'
+Plug 'mattn/vim-molder'
+Plug 'mattn/vim-molder-operations'
+
+Plug 'chase/vim-ansible-yaml'
+Plug 'posva/vim-vue'
+Plug 'Glench/Vim-Jinja2-Syntax'
+
+Plug 'lighttiger2505/gtags.vim'
+
+call plug#end()
+
 "=== Plugin Settings =======================================================
+let g:loaded_netrwPlugin = 1
 "let g:go_bin_path = expand("~/Application/go/bin")
 
 let g:vim_json_syntax_conceal = 0
@@ -120,12 +156,17 @@ let g:gen_tags#gtags_auto_gen = 1
 "  \ 'cmd': {server_info->['pyls']},
 "  \ 'whitelist': ['python'],
 "  \ })
+
 "endif
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:asyncomplete_popup_delay = 200
 
 " Syntastic recommend
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
@@ -136,42 +177,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 " lsp-setting
 "let g:lsp_settings = {}
 "
-"=== Plugins =================================================================
-call plug#begin('~/.vim/plugged')
-
-Plug 'altercation/vim-colors-solarized'
-Plug 'sjl/badwolf'
-Plug 'w0ng/vim-hybrid'
-Plug 'sainnhe/edge'
-Plug 'cocopon/iceberg.vim'
-Plug 'joshdick/onedark.vim'
-
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-
-Plug 'Yggdroot/indentLine'
-Plug 'airblade/vim-gitgutter'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'itchyny/lightline.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'mattn/emmet-vim'
-Plug 'scrooloose/nerdtree'
-
-Plug 'tkztmk/vim-vala'
-Plug 'leafgarland/typescript-vim'
-Plug 'chase/vim-ansible-yaml'
-Plug 'posva/vim-vue'
-Plug 'elzr/vim-json'
-Plug 'udalov/kotlin-vim'
-Plug 'Glench/Vim-Jinja2-Syntax'
-
-Plug 'lighttiger2505/gtags.vim'
-
-call plug#end()
-
 "=== UserCommand =========================================================
 " CdCurrent -- Change directory to path that edited current file.
 "              backport from cmdex.vim in Kaoriya edited Vim.
@@ -216,6 +221,15 @@ if !has('win32')
   cmap w!! w !sudo tee > /dev/null %
 endif
 "
+"=== Printer =============================================================
+" プリンターの設定
+if has('printer')
+  set printoptions=paper:A4,left:15mm,right:15mm,top:20mm,bottom:20mm
+  if has('win32')
+    set printfont=MS_Gothic:h10:cSHIFTJIS
+  endif
+endif
+"
 "=== ColorScheme ==========================================================
 colorscheme onedark
 set background=dark
@@ -229,19 +243,10 @@ if g:colors_name == 'edge'
   let g:edge_disable_italic_comment = 1
 endif
 
-syntax on
-filetype plugin indent on
-
 "highlight LineNr      ctermfg=240 guibg=#303030
 "highlight ColorColumn ctermbg=242 guibg=#6c6c6c
 "highlight SpecialKey  ctermfg=242 guifg=NONE
 "highlight NonText     ctermfg=Gray guifg=NONE
 
-"=== Printer =============================================================
-" プリンターの設定
-if has('printer')
-  set printoptions=paper:A4,left:15mm,right:15mm,top:20mm,bottom:20mm
-  if has('win32')
-    set printfont=MS_Gothic:h10:cSHIFTJIS
-  endif
-endif
+filetype plugin indent on
+syntax on

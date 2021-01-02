@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/yukke/Develop/boot/src/resources/static/traveler/css'
-let g:netrw_dirhist_2='/home/yukke/.cache/tags_dir/homeyukkeDeveloppcounterjs'
-let g:netrw_dirhist_3='/usr/share/doc/global'
-let g:netrw_dirhist_4='/home/yukke/Develop/pcounter.js'
-let g:netrw_dirhist_5='/home/yukke/Develop/pcounter.js/lib'
