@@ -12,7 +12,7 @@ filetype plugin indent off
 set ambiwidth=double
 set cursorline
 set fileencoding=utf-8
-set fileencodings=utf-8,cp932,sjis,iso-2022-jp,euc-jp
+set fileencodings=utf-8,cp932,sjis
 set fileformats=unix,dos,mac
 set noerrorbells
 set visualbell t_vb=
@@ -57,6 +57,7 @@ set backspace=indent,eol,start
 set list
 set listchars=tab:>-,extends:<,trail:-
 set number
+set numberwidth=8
 set ruler
 set splitbelow
 set splitright
@@ -97,6 +98,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
+Plug 'lambdalisue/fern.vim'
 "Plug 'scrooloose/nerdtree'
 Plug 'mattn/vim-molder'
 Plug 'mattn/vim-molder-operations'
