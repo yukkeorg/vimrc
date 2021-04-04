@@ -18,42 +18,42 @@
 "	:let plugin_hz_ja_disable = 1
 
 " Japanese Description:
-" ƒRƒ}ƒ“ƒh:
+" ã‚³ãƒãƒ³ãƒ‰:
 "   :[raneg]Hankaku
 "   :[range]Zenkaku
 "   :[range]ToggleHZ
 "   :[range]HzjaConvert {target}
 "
-" ƒL[ƒ}ƒbƒsƒ“ƒO:
-"   ˆÈ‰º‚ÍƒrƒWƒ…ƒAƒ‹‘I‘ğ—Ìˆæ‚É‘Î‚·‚é‘€ì‚Å‚·B‚Ü‚½()“à‚ÍHzjaConvertƒRƒ}ƒ“ƒh
-"   ‚ÆŠÖ”‚É“n‚·Atarget‚Éw’è‰Â”\‚È•¶š—ñ‚Å‚·B
-"     gHL	‰Â”\‚È•¶š‚ğ‘S‚Ä”¼Šp‚É•ÏŠ·‚·‚é	(han_all)
-"     gZL	‰Â”\‚È•¶š‚ğ‘S‚Ä‘SŠp‚É•ÏŠ·‚·‚é	(zen_all)
-"     gHA	ASCII•¶š‚ğ‘S‚Ä”¼Šp‚É•ÏŠ·‚·‚é	(han_ascii)
-"     gZA	ASCII•¶š‚ğ‘S‚Ä‘SŠp‚É•ÏŠ·‚·‚é	(zen_ascii)
-"     gHM	‹L†‚ğ‘S‚Ä”¼Šp‚É•ÏŠ·‚·‚é	(han_kigou)
-"     gZM	‹L†‚ğ‘S‚Ä‘SŠp‚É•ÏŠ·‚·‚é	(zen_kigou)
-"     gHW	‰p”š‚ğ‘S‚Ä”¼Šp‚É•ÏŠ·‚·‚é	(han_eisu)
-"     gZW	‰p”š‚ğ‘S‚Ä‘SŠp‚É•ÏŠ·‚·‚é	(zen_eisu)
-"     gHJ	ƒJƒ^ƒJƒi‚ğ‘S‚Ä”¼Šp‚É•ÏŠ·‚·‚é	(han_kana)
-"     gZJ	ƒJƒ^ƒJƒi‚ğ‘S‚Ä‘SŠp‚É•ÏŠ·‚·‚é	(zen_kana)
-"   ˆÈ‰º‚Íg—p•p“x‚Ì‚‚³‚ğl—¶‚µ‚ÄAã‹L‚Æd•¡‚µ‚½‹@”\‚Æ‚µ‚ÄŠ„‚è“–‚Ä‚ç‚ê‚½
-"   ƒL[ƒ}ƒbƒv‚Å‚·B
-"     gHH	ASCII•¶š‚ğ‘S‚Ä”¼Šp‚É•ÏŠ·‚·‚é	(han_ascii)
-"     gZZ	ƒJƒ^ƒJƒi‚ğ‘S‚Ä‘SŠp‚É•ÏŠ·‚·‚é	(zen_kana)
+" ã‚­ãƒ¼ãƒãƒƒãƒ”ãƒ³ã‚°:
+"   ä»¥ä¸‹ã¯ãƒ“ã‚¸ãƒ¥ã‚¢ãƒ«é¸æŠé ˜åŸŸã«å¯¾ã™ã‚‹æ“ä½œã§ã™ã€‚ã¾ãŸ()å†…ã¯HzjaConvertã‚³ãƒãƒ³ãƒ‰
+"   ã¨é–¢æ•°ã«æ¸¡ã™ã€targetã«æŒ‡å®šå¯èƒ½ãªæ–‡å­—åˆ—ã§ã™ã€‚
+"     gHL	å¯èƒ½ãªæ–‡å­—ã‚’å…¨ã¦åŠè§’ã«å¤‰æ›ã™ã‚‹	(han_all)
+"     gZL	å¯èƒ½ãªæ–‡å­—ã‚’å…¨ã¦å…¨è§’ã«å¤‰æ›ã™ã‚‹	(zen_all)
+"     gHA	ASCIIæ–‡å­—ã‚’å…¨ã¦åŠè§’ã«å¤‰æ›ã™ã‚‹	(han_ascii)
+"     gZA	ASCIIæ–‡å­—ã‚’å…¨ã¦å…¨è§’ã«å¤‰æ›ã™ã‚‹	(zen_ascii)
+"     gHM	è¨˜å·ã‚’å…¨ã¦åŠè§’ã«å¤‰æ›ã™ã‚‹	(han_kigou)
+"     gZM	è¨˜å·ã‚’å…¨ã¦å…¨è§’ã«å¤‰æ›ã™ã‚‹	(zen_kigou)
+"     gHW	è‹±æ•°å­—ã‚’å…¨ã¦åŠè§’ã«å¤‰æ›ã™ã‚‹	(han_eisu)
+"     gZW	è‹±æ•°å­—ã‚’å…¨ã¦å…¨è§’ã«å¤‰æ›ã™ã‚‹	(zen_eisu)
+"     gHJ	ã‚«ã‚¿ã‚«ãƒŠã‚’å…¨ã¦åŠè§’ã«å¤‰æ›ã™ã‚‹	(han_kana)
+"     gZJ	ã‚«ã‚¿ã‚«ãƒŠã‚’å…¨ã¦å…¨è§’ã«å¤‰æ›ã™ã‚‹	(zen_kana)
+"   ä»¥ä¸‹ã¯ä½¿ç”¨é »åº¦ã®é«˜ã•ã‚’è€ƒæ…®ã—ã¦ã€ä¸Šè¨˜ã¨é‡è¤‡ã—ãŸæ©Ÿèƒ½ã¨ã—ã¦å‰²ã‚Šå½“ã¦ã‚‰ã‚ŒãŸ
+"   ã‚­ãƒ¼ãƒãƒƒãƒ—ã§ã™ã€‚
+"     gHH	ASCIIæ–‡å­—ã‚’å…¨ã¦åŠè§’ã«å¤‰æ›ã™ã‚‹	(han_ascii)
+"     gZZ	ã‚«ã‚¿ã‚«ãƒŠã‚’å…¨ã¦å…¨è§’ã«å¤‰æ›ã™ã‚‹	(zen_kana)
 " 
-" ŠÖ”:
-"   ToHankaku(str)	•¶š—ñ‚ğ”¼Šp‚Ö•ÏŠ·‚·‚é
-"   ToZenkaku(str)	•¶š—ñ‚ğ‘SŠp‚Ö•ÏŠ·‚·‚é
+" é–¢æ•°:
+"   ToHankaku(str)	æ–‡å­—åˆ—ã‚’åŠè§’ã¸å¤‰æ›ã™ã‚‹
+"   ToZenkaku(str)	æ–‡å­—åˆ—ã‚’å…¨è§’ã¸å¤‰æ›ã™ã‚‹
 "   HzjaConvert(str, target)
-"			•¶š—ñ‚ğtarget‚É]‚¢•ÏŠ·‚·‚éBtarget‚ÌˆÓ–¡‚ÍƒL[ƒ}ƒb
-"			ƒsƒ“ƒO‚Ì€–Ú‚ğQÆB
+"			æ–‡å­—åˆ—ã‚’targetã«å¾“ã„å¤‰æ›ã™ã‚‹ã€‚targetã®æ„å‘³ã¯ã‚­ãƒ¼ãƒãƒƒ
+"			ãƒ”ãƒ³ã‚°ã®é …ç›®ã‚’å‚ç…§ã€‚
 "
-" ƒƒjƒ…[Šg’£:
-"   GUIŠÂ‹«‚Å‚ÍƒrƒWƒ…ƒAƒ‹‘I‘ğ‚Ìƒ|ƒbƒvƒAƒbƒvƒƒjƒ…[(‰EƒNƒŠƒbƒNƒƒjƒ…[)‚É
-"   •ÏŠ·—p‚ÌƒRƒ}ƒ“ƒh‚ª’Ç‰Á‚³‚ê‚Ü‚·B
+" ãƒ¡ãƒ‹ãƒ¥ãƒ¼æ‹¡å¼µ:
+"   GUIç’°å¢ƒã§ã¯ãƒ“ã‚¸ãƒ¥ã‚¢ãƒ«é¸æŠæ™‚ã®ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ãƒ¡ãƒ‹ãƒ¥ãƒ¼(å³ã‚¯ãƒªãƒƒã‚¯ãƒ¡ãƒ‹ãƒ¥ãƒ¼)ã«
+"   å¤‰æ›ç”¨ã®ã‚³ãƒãƒ³ãƒ‰ãŒè¿½åŠ ã•ã‚Œã¾ã™ã€‚
 "
-" ‚±‚Ìƒvƒ‰ƒOƒCƒ“‚ğ“Ç‚İ‚½‚­‚È‚¢‚Í.vimrc‚ÉŸ‚Ì‚æ‚¤‚É‘‚­‚±‚Æ:
+" ã“ã®ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã‚’èª­è¾¼ã¿ãŸããªã„æ™‚ã¯.vimrcã«æ¬¡ã®ã‚ˆã†ã«æ›¸ãã“ã¨:
 "	:let plugin_hz_ja_disable = 1
 
 scriptencoding cp932
@@ -86,16 +86,16 @@ vnoremap <silent> gZZ <C-\><C-N>:call <SID>HzjaConvertVisual('zen_kana')<CR>
 
 if has('gui_running')
   vnoremenu 1.120 PopUp.-SEP3-	<Nop>
-  vnoremenu 1.130.100 PopUp.‘SŠp¨”¼Šp(&H).‘S•”(&L) <C-\><C-N>:call <SID>HzjaConvertVisual('han_all')<CR>
-  vnoremenu 1.130.110 PopUp.‘SŠp¨”¼Šp(&H).ASCII(&A) <C-\><C-N>:call <SID>HzjaConvertVisual('han_ascii')<CR>
-  vnoremenu 1.130.120 PopUp.‘SŠp¨”¼Šp(&H).‹L†(&M) <C-\><C-N>:call <SID>HzjaConvertVisual('han_kigou')<CR>
-  vnoremenu 1.130.130 PopUp.‘SŠp¨”¼Šp(&H).‰p”(&W) <C-\><C-N>:call <SID>HzjaConvertVisual('han_eisu')<CR>
-  vnoremenu 1.130.140 PopUp.‘SŠp¨”¼Šp(&H).ƒJƒ^ƒJƒi(&J) <C-\><C-N>:call <SID>HzjaConvertVisual('han_kana')<CR>
-  vnoremenu 1.140.100 PopUp.”¼Šp¨‘SŠp(&Z).‘S•”(&L) <C-\><C-N>:call <SID>HzjaConvertVisual('zen_all')<CR>
-  vnoremenu 1.140.110 PopUp.”¼Šp¨‘SŠp(&Z).ASCII(&A) <C-\><C-N>:call <SID>HzjaConvertVisual('zen_ascii')<CR>
-  vnoremenu 1.140.120 PopUp.”¼Šp¨‘SŠp(&Z).‹L†(&M) <C-\><C-N>:call <SID>HzjaConvertVisual('zen_kigou')<CR>
-  vnoremenu 1.140.130 PopUp.”¼Šp¨‘SŠp(&Z).‰p”(&W) <C-\><C-N>:call <SID>HzjaConvertVisual('zen_eisu')<CR>
-  vnoremenu 1.140.140 PopUp.”¼Šp¨‘SŠp(&Z).ƒJƒ^ƒJƒi(&J) <C-\><C-N>:call <SID>HzjaConvertVisual('zen_kana')<CR>
+  vnoremenu 1.130.100 PopUp.å…¨è§’â†’åŠè§’(&H).å…¨éƒ¨(&L) <C-\><C-N>:call <SID>HzjaConvertVisual('han_all')<CR>
+  vnoremenu 1.130.110 PopUp.å…¨è§’â†’åŠè§’(&H).ASCII(&A) <C-\><C-N>:call <SID>HzjaConvertVisual('han_ascii')<CR>
+  vnoremenu 1.130.120 PopUp.å…¨è§’â†’åŠè§’(&H).è¨˜å·(&M) <C-\><C-N>:call <SID>HzjaConvertVisual('han_kigou')<CR>
+  vnoremenu 1.130.130 PopUp.å…¨è§’â†’åŠè§’(&H).è‹±æ•°(&W) <C-\><C-N>:call <SID>HzjaConvertVisual('han_eisu')<CR>
+  vnoremenu 1.130.140 PopUp.å…¨è§’â†’åŠè§’(&H).ã‚«ã‚¿ã‚«ãƒŠ(&J) <C-\><C-N>:call <SID>HzjaConvertVisual('han_kana')<CR>
+  vnoremenu 1.140.100 PopUp.åŠè§’â†’å…¨è§’(&Z).å…¨éƒ¨(&L) <C-\><C-N>:call <SID>HzjaConvertVisual('zen_all')<CR>
+  vnoremenu 1.140.110 PopUp.åŠè§’â†’å…¨è§’(&Z).ASCII(&A) <C-\><C-N>:call <SID>HzjaConvertVisual('zen_ascii')<CR>
+  vnoremenu 1.140.120 PopUp.åŠè§’â†’å…¨è§’(&Z).è¨˜å·(&M) <C-\><C-N>:call <SID>HzjaConvertVisual('zen_kigou')<CR>
+  vnoremenu 1.140.130 PopUp.åŠè§’â†’å…¨è§’(&Z).è‹±æ•°(&W) <C-\><C-N>:call <SID>HzjaConvertVisual('zen_eisu')<CR>
+  vnoremenu 1.140.140 PopUp.åŠè§’â†’å…¨è§’(&Z).ã‚«ã‚¿ã‚«ãƒŠ(&J) <C-\><C-N>:call <SID>HzjaConvertVisual('zen_kana')<CR>
 endif
 
 function! HzjaConvertComplete(argleand, cmdline, curpos)
@@ -111,19 +111,19 @@ function! s:HzjaConvert(target) range
   endwhile
 endfunction
 
-" —^‚¦‚ç‚ê‚½•¶š—ñ‚Ì”¼Šp‘SŠp•¶š‚ğ‘ŠŒİ‚É•ÏŠ·‚·‚éB•ÏŠ·‚Ì•û–@‚Íˆø”target‚Å•¶
-" š—ñ‚Æ‚µ‚Äw’è‚·‚éBw’è‚Å‚«‚é•¶š—ñ‚ÍˆÈ‰º‚Ì‚Æ‚¨‚èB
+" ä¸ãˆã‚‰ã‚ŒãŸæ–‡å­—åˆ—ã®åŠè§’å…¨è§’æ–‡å­—ã‚’ç›¸äº’ã«å¤‰æ›ã™ã‚‹ã€‚å¤‰æ›ã®æ–¹æ³•ã¯å¼•æ•°targetã§æ–‡
+" å­—åˆ—ã¨ã—ã¦æŒ‡å®šã™ã‚‹ã€‚æŒ‡å®šã§ãã‚‹æ–‡å­—åˆ—ã¯ä»¥ä¸‹ã®ã¨ãŠã‚Šã€‚
 "
-"   han_all	‘S‚Ä‚Ì‘SŠp•¶š¨”¼Šp
-"   han_ascii	‘SŠpƒAƒXƒL[¨”¼Šp
-"   han_kana	‘SŠpƒJƒ^ƒJƒi¨”¼Šp
-"   han_eisu	‘SŠp‰p”¨”¼Šp
-"   han_kigou	‘SŠp‹L†¨”¼Šp
-"   zen_all	‘S‚Ä‚Ì”¼Šp•¶š¨‘SŠp
-"   zen_ascii	”¼ŠpƒAƒXƒL[¨‘SŠp
-"   zen_kana	”¼ŠpƒJƒ^ƒJƒi¨‘SŠp
-"   zen_eisu	”¼Šp‰p”¨‘SŠp
-"   zen_kigou	”¼Šp‹L†¨‘SŠp
+"   han_all	å…¨ã¦ã®å…¨è§’æ–‡å­—â†’åŠè§’
+"   han_ascii	å…¨è§’ã‚¢ã‚¹ã‚­ãƒ¼â†’åŠè§’
+"   han_kana	å…¨è§’ã‚«ã‚¿ã‚«ãƒŠâ†’åŠè§’
+"   han_eisu	å…¨è§’è‹±æ•°â†’åŠè§’
+"   han_kigou	å…¨è§’è¨˜å·â†’åŠè§’
+"   zen_all	å…¨ã¦ã®åŠè§’æ–‡å­—â†’å…¨è§’
+"   zen_ascii	åŠè§’ã‚¢ã‚¹ã‚­ãƒ¼â†’å…¨è§’
+"   zen_kana	åŠè§’ã‚«ã‚¿ã‚«ãƒŠâ†’å…¨è§’
+"   zen_eisu	åŠè§’è‹±æ•°â†’å…¨è§’
+"   zen_kigou	åŠè§’è¨˜å·â†’å…¨è§’
 "
 function! HzjaConvert(line, target)
   call s:Initialize()
@@ -152,44 +152,44 @@ function! s:Initialize()
   endif
   let s:init = 1
 
-  let s:match_character = '\%([³¶·¸¹º»¼½¾¿ÀÁÂÃÄÊËÌÍÎ]Ş\|[ÊËÌÍÎ]ß\|.\)'
-  let s:match_hankaku = '\%([³¶·¸¹º»¼½¾¿ÀÁÂÃÄÊËÌÍÎ]Ş\|[ÊËÌÍÎ]ß\|[ -~¡¢£¤¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞß]\)'
+  let s:match_character = '\%([ï½³ï½¶ï½·ï½¸ï½¹ï½ºï½»ï½¼ï½½ï½¾ï½¿ï¾€ï¾ï¾‚ï¾ƒï¾„ï¾Šï¾‹ï¾Œï¾ï¾]ï¾\|[ï¾Šï¾‹ï¾Œï¾ï¾]ï¾Ÿ\|.\)'
+  let s:match_hankaku = '\%([ï½³ï½¶ï½·ï½¸ï½¹ï½ºï½»ï½¼ï½½ï½¾ï½¿ï¾€ï¾ï¾‚ï¾ƒï¾„ï¾Šï¾‹ï¾Œï¾ï¾]ï¾\|[ï¾Šï¾‹ï¾Œï¾ï¾]ï¾Ÿ\|[ -~ï½¡ï½¢ï½£ï½¤ï½¦ï½§ï½¨ï½©ï½ªï½«ï½¬ï½­ï½®ï½¯ï½°ï½±ï½²ï½³ï½´ï½µï½¶ï½·ï½¸ï½¹ï½ºï½»ï½¼ï½½ï½¾ï½¿ï¾€ï¾ï¾‚ï¾ƒï¾„ï¾…ï¾†ï¾‡ï¾ˆï¾‰ï¾Šï¾‹ï¾Œï¾ï¾ï¾ï¾ï¾‘ï¾’ï¾“ï¾”ï¾•ï¾–ï¾—ï¾˜ï¾™ï¾šï¾›ï¾œï¾ï¾ï¾Ÿ]\)'
 
-  let zen_ascii = '@Ih”“•fij–{C|D^‚O‚P‚Q‚R‚S‚T‚U‚V‚W‚XFGƒ„H—‚`‚a‚b‚c‚d‚e‚f‚g‚h‚i‚j‚k‚l‚m‚n‚o‚p‚q‚r‚s‚t‚u‚v‚w‚x‚ymnOQe‚‚‚‚ƒ‚„‚…‚†‚‡‚ˆ‚‰‚Š‚‹‚Œ‚‚‚‚‚‘‚’‚“‚”‚•‚–‚—‚˜‚™‚šobp`'
-  let zen_kana = 'BuvAƒ’ƒ@ƒBƒDƒFƒHƒƒƒ…ƒ‡ƒb[ƒAƒCƒEƒGƒIƒJƒLƒNƒPƒRƒTƒVƒXƒZƒ\ƒ^ƒ`ƒcƒeƒgƒiƒjƒkƒlƒmƒnƒqƒtƒwƒzƒ}ƒ~ƒ€ƒƒ‚ƒ„ƒ†ƒˆƒ‰ƒŠƒ‹ƒŒƒƒƒ“JKƒ”ƒKƒMƒOƒQƒSƒUƒWƒYƒ[ƒ]ƒ_ƒaƒdƒfƒhƒoƒrƒuƒxƒ{ƒpƒsƒvƒyƒ|'
+  let zen_ascii = 'ã€€ï¼â€ï¼ƒï¼„ï¼…ï¼†â€™ï¼ˆï¼‰ï¼Šï¼‹ï¼Œï¼ï¼ï¼ï¼ï¼‘ï¼’ï¼“ï¼”ï¼•ï¼–ï¼—ï¼˜ï¼™ï¼šï¼›ï¼œï¼ï¼ï¼Ÿï¼ ï¼¡ï¼¢ï¼£ï¼¤ï¼¥ï¼¦ï¼§ï¼¨ï¼©ï¼ªï¼«ï¼¬ï¼­ï¼®ï¼¯ï¼°ï¼±ï¼²ï¼³ï¼´ï¼µï¼¶ï¼·ï¼¸ï¼¹ï¼ºï¼»ï¿¥ï¼½ï¼¾ï¼¿â€˜ï½ï½‚ï½ƒï½„ï½…ï½†ï½‡ï½ˆï½‰ï½Šï½‹ï½Œï½ï½ï½ï½ï½‘ï½’ï½“ï½”ï½•ï½–ï½—ï½˜ï½™ï½šï½›ï½œï½ï½'
+  let zen_kana = 'ã€‚ã€Œã€ã€ãƒ²ã‚¡ã‚£ã‚¥ã‚§ã‚©ãƒ£ãƒ¥ãƒ§ãƒƒãƒ¼ã‚¢ã‚¤ã‚¦ã‚¨ã‚ªã‚«ã‚­ã‚¯ã‚±ã‚³ã‚µã‚·ã‚¹ã‚»ã‚½ã‚¿ãƒãƒ„ãƒ†ãƒˆãƒŠãƒ‹ãƒŒãƒãƒãƒãƒ’ãƒ•ãƒ˜ãƒ›ãƒãƒŸãƒ ãƒ¡ãƒ¢ãƒ¤ãƒ¦ãƒ¨ãƒ©ãƒªãƒ«ãƒ¬ãƒ­ãƒ¯ãƒ³ã‚›ã‚œãƒ´ã‚¬ã‚®ã‚°ã‚²ã‚´ã‚¶ã‚¸ã‚ºã‚¼ã‚¾ãƒ€ãƒ‚ãƒ…ãƒ‡ãƒ‰ãƒãƒ“ãƒ–ãƒ™ãƒœãƒ‘ãƒ”ãƒ—ãƒšãƒ'
   let han_ascii = " !\"#$%&'()*+,\\-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
-  let han_kana = '¡¢£¤¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞß'
+  let han_kana = 'ï½¡ï½¢ï½£ï½¤ï½¦ï½§ï½¨ï½©ï½ªï½«ï½¬ï½­ï½®ï½¯ï½°ï½±ï½²ï½³ï½´ï½µï½¶ï½·ï½¸ï½¹ï½ºï½»ï½¼ï½½ï½¾ï½¿ï¾€ï¾ï¾‚ï¾ƒï¾„ï¾…ï¾†ï¾‡ï¾ˆï¾‰ï¾Šï¾‹ï¾Œï¾ï¾ï¾ï¾ï¾‘ï¾’ï¾“ï¾”ï¾•ï¾–ï¾—ï¾˜ï¾™ï¾šï¾›ï¾œï¾ï¾ï¾Ÿ'
   let s:mx_han_all = "[".zen_ascii.zen_kana."]\\+"
   let s:mx_zen_all = "[".han_ascii.han_kana."]\\+"
   let s:mx_han_ascii = "[".zen_ascii."]\\+"
   let s:mx_zen_ascii = "[".han_ascii."]\\+"
   let s:mx_han_kana = "[".zen_kana."]\\+"
   let s:mx_zen_kana = "[".han_kana."]\\+"
-  let s:mx_han_eisu = '[‚O‚P‚Q‚R‚S‚T‚U‚V‚W‚X‚`‚a‚b‚c‚d‚e‚f‚g‚h‚i‚j‚k‚l‚m‚n‚o‚p‚q‚r‚s‚t‚u‚v‚w‚x‚y‚‚‚‚ƒ‚„‚…‚†‚‡‚ˆ‚‰‚Š‚‹‚Œ‚‚‚‚‚‘‚’‚“‚”‚•‚–‚—‚˜‚™‚š]\+'
+  let s:mx_han_eisu = '[ï¼ï¼‘ï¼’ï¼“ï¼”ï¼•ï¼–ï¼—ï¼˜ï¼™ï¼¡ï¼¢ï¼£ï¼¤ï¼¥ï¼¦ï¼§ï¼¨ï¼©ï¼ªï¼«ï¼¬ï¼­ï¼®ï¼¯ï¼°ï¼±ï¼²ï¼³ï¼´ï¼µï¼¶ï¼·ï¼¸ï¼¹ï¼ºï½ï½‚ï½ƒï½„ï½…ï½†ï½‡ï½ˆï½‰ï½Šï½‹ï½Œï½ï½ï½ï½ï½‘ï½’ï½“ï½”ï½•ï½–ï½—ï½˜ï½™ï½š]\+'
   let s:mx_zen_eisu = '[0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz]\+'
-  let s:mx_han_kigou = '[Ih”“•fij–{C|D^FGƒ„H—mnOQeobp`]\+'
+  let s:mx_han_kigou = '[ï¼â€ï¼ƒï¼„ï¼…ï¼†â€™ï¼ˆï¼‰ï¼Šï¼‹ï¼Œï¼ï¼ï¼ï¼šï¼›ï¼œï¼ï¼ï¼Ÿï¼ ï¼»ï¿¥ï¼½ï¼¾ï¼¿â€˜ï½›ï½œï½ï½]\+'
   let s:mx_zen_kigou = "[!\"#$%&'()*+,\\-./:;<=>?@[\\\\\\]^_`{|}~]\\+"
   let s:targetlist = "han_all\<NL>zen_all\<NL>han_ascii\<NL>zen_ascii\<NL>han_kana\<NL>zen_kana\<NL>han_eisu\<NL>zen_eisu\<NL>han_kigou\<NL>zen_kigou"
 
-  " ”¼Šp¨‘SŠpƒe[ƒuƒ‹ì¬
+  " åŠè§’â†’å…¨è§’ãƒ†ãƒ¼ãƒ–ãƒ«ä½œæˆ
   let tmp = ''
-  let tmp = tmp . " @!I\"h#”$%“&•'f(i)j*–+{,C-|.D/^"
-  let tmp = tmp . '0‚O1‚P2‚Q3‚R4‚S5‚T6‚U7‚V8‚W9‚X:F;G<ƒ=>„?H'
-  let tmp = tmp . '@—A‚`B‚aC‚bD‚cE‚dF‚eG‚fH‚gI‚hJ‚iK‚jL‚kM‚lN‚mO‚n'
-  let tmp = tmp . 'P‚oQ‚pR‚qS‚rT‚sU‚tV‚uW‚vX‚wY‚xZ‚y[m\]n^O_Q'
-  let tmp = tmp . '`ea‚b‚‚c‚ƒd‚„e‚…f‚†g‚‡h‚ˆi‚‰j‚Šk‚‹l‚Œm‚n‚o‚'
-  let tmp = tmp . 'p‚q‚‘r‚’s‚“t‚”u‚•v‚–w‚—x‚˜y‚™z‚š{o|b}p~`'
-  let tmp = tmp . '¡B¢u£v¤A¦ƒ’§ƒ@¨ƒB©ƒDªƒF«ƒH¬ƒƒ­ƒ…®ƒ‡¯ƒb'
-  let tmp = tmp . '°[±ƒA²ƒC³ƒE´ƒGµƒI¶ƒJ·ƒL¸ƒN¹ƒPºƒR»ƒT¼ƒV½ƒX¾ƒZ¿ƒ\'
-  let tmp = tmp . 'Àƒ^Áƒ`ÂƒcÃƒeÄƒgÅƒiÆƒjÇƒkÈƒlÉƒmÊƒnËƒqÌƒtÍƒwÎƒzÏƒ}'
-  let tmp = tmp . 'Ğƒ~Ñƒ€ÒƒÓƒ‚Ôƒ„Õƒ†Öƒˆ×ƒ‰ØƒŠÙƒ‹ÚƒŒÛƒÜƒİƒ“ŞJßK'
-  let tmp = tmp . '³Şƒ”¶ŞƒK·ŞƒM¸ŞƒO¹ŞƒQºŞƒS»ŞƒU¼ŞƒW½ŞƒY¾Şƒ[¿Şƒ]'
-  let tmp = tmp . 'ÀŞƒ_ÁŞƒaÂŞƒdÃŞƒfÄŞƒhÊŞƒoËŞƒrÌŞƒuÍŞƒxÎŞƒ{'
-  let tmp = tmp . 'ÊßƒpËßƒsÌßƒvÍßƒyÎßƒ|'
+  let tmp = tmp . " ã€€!ï¼\"â€#ï¼ƒ$ï¼„%ï¼…&ï¼†'â€™(ï¼ˆ)ï¼‰*ï¼Š+ï¼‹,ï¼Œ-ï¼.ï¼/ï¼"
+  let tmp = tmp . '0ï¼1ï¼‘2ï¼’3ï¼“4ï¼”5ï¼•6ï¼–7ï¼—8ï¼˜9ï¼™:ï¼š;ï¼›<ï¼œ=ï¼>ï¼?ï¼Ÿ'
+  let tmp = tmp . '@ï¼ Aï¼¡Bï¼¢Cï¼£Dï¼¤Eï¼¥Fï¼¦Gï¼§Hï¼¨Iï¼©Jï¼ªKï¼«Lï¼¬Mï¼­Nï¼®Oï¼¯'
+  let tmp = tmp . 'Pï¼°Qï¼±Rï¼²Sï¼³Tï¼´Uï¼µVï¼¶Wï¼·Xï¼¸Yï¼¹Zï¼º[ï¼»\ï¿¥]ï¼½^ï¼¾_ï¼¿'
+  let tmp = tmp . '`â€˜aï½bï½‚cï½ƒdï½„eï½…fï½†gï½‡hï½ˆiï½‰jï½Škï½‹lï½Œmï½nï½oï½'
+  let tmp = tmp . 'pï½qï½‘rï½’sï½“tï½”uï½•vï½–wï½—xï½˜yï½™zï½š{ï½›|ï½œ}ï½~ï½'
+  let tmp = tmp . 'ï½¡ã€‚ï½¢ã€Œï½£ã€ï½¤ã€ï½¦ãƒ²ï½§ã‚¡ï½¨ã‚£ï½©ã‚¥ï½ªã‚§ï½«ã‚©ï½¬ãƒ£ï½­ãƒ¥ï½®ãƒ§ï½¯ãƒƒ'
+  let tmp = tmp . 'ï½°ãƒ¼ï½±ã‚¢ï½²ã‚¤ï½³ã‚¦ï½´ã‚¨ï½µã‚ªï½¶ã‚«ï½·ã‚­ï½¸ã‚¯ï½¹ã‚±ï½ºã‚³ï½»ã‚µï½¼ã‚·ï½½ã‚¹ï½¾ã‚»ï½¿ã‚½'
+  let tmp = tmp . 'ï¾€ã‚¿ï¾ãƒï¾‚ãƒ„ï¾ƒãƒ†ï¾„ãƒˆï¾…ãƒŠï¾†ãƒ‹ï¾‡ãƒŒï¾ˆãƒï¾‰ãƒï¾Šãƒï¾‹ãƒ’ï¾Œãƒ•ï¾ãƒ˜ï¾ãƒ›ï¾ãƒ'
+  let tmp = tmp . 'ï¾ãƒŸï¾‘ãƒ ï¾’ãƒ¡ï¾“ãƒ¢ï¾”ãƒ¤ï¾•ãƒ¦ï¾–ãƒ¨ï¾—ãƒ©ï¾˜ãƒªï¾™ãƒ«ï¾šãƒ¬ï¾›ãƒ­ï¾œãƒ¯ï¾ãƒ³ï¾ã‚›ï¾Ÿã‚œ'
+  let tmp = tmp . 'ï½³ï¾ãƒ´ï½¶ï¾ã‚¬ï½·ï¾ã‚®ï½¸ï¾ã‚°ï½¹ï¾ã‚²ï½ºï¾ã‚´ï½»ï¾ã‚¶ï½¼ï¾ã‚¸ï½½ï¾ã‚ºï½¾ï¾ã‚¼ï½¿ï¾ã‚¾'
+  let tmp = tmp . 'ï¾€ï¾ãƒ€ï¾ï¾ãƒ‚ï¾‚ï¾ãƒ…ï¾ƒï¾ãƒ‡ï¾„ï¾ãƒ‰ï¾Šï¾ãƒï¾‹ï¾ãƒ“ï¾Œï¾ãƒ–ï¾ï¾ãƒ™ï¾ï¾ãƒœ'
+  let tmp = tmp . 'ï¾Šï¾Ÿãƒ‘ï¾‹ï¾Ÿãƒ”ï¾Œï¾Ÿãƒ—ï¾ï¾Ÿãƒšï¾ï¾Ÿãƒ'
   let tmp = tmp . ''
   let s:table_h2z = tmp
 
-  " ‘SŠp¨”¼Šp•ÏŠ·ƒe[ƒuƒ‹‚ğì¬‚·‚éB
+  " å…¨è§’â†’åŠè§’å¤‰æ›ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã™ã‚‹ã€‚
   let s:table_z2h = ''
   let startcol = 0
   let endcol = strlen(s:table_h2z)
@@ -203,7 +203,7 @@ function! s:Initialize()
 endfunction
 
 "
-" ƒRƒ}ƒ“ƒh‚Åw’è‚³‚ê‚½—Ìˆæ‚ğ•ÏŠ·‚·‚é
+" ã‚³ãƒãƒ³ãƒ‰ã§æŒ‡å®šã•ã‚ŒãŸé ˜åŸŸã‚’å¤‰æ›ã™ã‚‹
 "
 function! s:ToggleLineWise(operator) range
   call s:Initialize()
@@ -216,7 +216,7 @@ function! s:ToggleLineWise(operator) range
 endfunction
 
 "
-" —^‚¦‚ç‚ê‚½•¶š—ñ‚ğ•ÏŠ·‚µ‚Ä•Ô‚·B
+" ä¸ãˆã‚‰ã‚ŒãŸæ–‡å­—åˆ—ã‚’å¤‰æ›ã—ã¦è¿”ã™ã€‚
 "
 function! s:ToggleLine(line, startcolumn, endcolumn, operator)
   let endcol = ((a:endcolumn > 0 && a:endcolumn < strlen(a:line))? a:endcolumn : strlen(a:line)) - 1
@@ -242,14 +242,14 @@ function! ToZenkaku(str)
 endfunction
 
 "
-" “ü—Íchar‚ğ‰Â”\‚È‚ç‚Î”¼Šp/‘SŠp•ÏŠ·‚µ‚Ä•Ô‚·B•ÏŠ·‚Å‚«‚È‚¢ê‡‚Í‚»‚Ì‚Ü‚ÜB
+" å…¥åŠ›charã‚’å¯èƒ½ãªã‚‰ã°åŠè§’/å…¨è§’å¤‰æ›ã—ã¦è¿”ã™ã€‚å¤‰æ›ã§ããªã„å ´åˆã¯ãã®ã¾ã¾ã€‚
 "
 function! s:ToggleChar(char)
   return (s:IsHankaku(a:char)) ? (s:ZenkakuChar(a:char)) : (s:HankakuChar(a:char))
 endfunction
 
 "
-" “ü—Íchar‚ğ‰Â”\‚È‚ç‚Î‘SŠp‚É•ÏŠ·‚µ‚Ä•Ô‚·B•ÏŠ·‚Å‚«‚È‚¢ê‡‚Í‚»‚Ì‚Ü‚ÜB
+" å…¥åŠ›charã‚’å¯èƒ½ãªã‚‰ã°å…¨è§’ã«å¤‰æ›ã—ã¦è¿”ã™ã€‚å¤‰æ›ã§ããªã„å ´åˆã¯ãã®ã¾ã¾ã€‚
 "
 function! s:ZenkakuChar(char)
   if s:IsHankaku(a:char)
@@ -262,7 +262,7 @@ function! s:ZenkakuChar(char)
 endfunction
 
 "
-" “ü—Íchar‚ğ‰Â”\‚È‚ç‚Î”¼Šp‚É•ÏŠ·‚µ‚Ä•Ô‚·B•ÏŠ·‚Å‚«‚È‚¢ê‡‚Í‚»‚Ì‚Ü‚ÜB
+" å…¥åŠ›charã‚’å¯èƒ½ãªã‚‰ã°åŠè§’ã«å¤‰æ›ã—ã¦è¿”ã™ã€‚å¤‰æ›ã§ããªã„å ´åˆã¯ãã®ã¾ã¾ã€‚
 "
 function! s:HankakuChar(char)
   if !s:IsHankaku(a:char)
@@ -275,7 +275,7 @@ function! s:HankakuChar(char)
 endfunction
 
 "
-" —^‚¦‚ç‚ê‚½•¶š‚ª”¼Šp‚©‚Ç‚¤‚©‚ğ”»’è‚·‚éB
+" ä¸ãˆã‚‰ã‚ŒãŸæ–‡å­—ãŒåŠè§’ã‹ã©ã†ã‹ã‚’åˆ¤å®šã™ã‚‹ã€‚
 "
 function! s:IsHankaku(char)
   return a:char =~ '^' . s:match_hankaku . '$'
