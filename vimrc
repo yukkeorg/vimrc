@@ -57,8 +57,9 @@ set backspace=indent,eol,start
 set list
 set listchars=tab:>-,extends:<,trail:-
 set number
-set numberwidth=8
+set numberwidth=6
 set ruler
+set signcolumn=yes
 set splitbelow
 set splitright
 set scrolloff=5
@@ -67,14 +68,16 @@ set wrapscan
 
 " その他
 set colorcolumn=100
+set completeopt=menuone,noinsert
 set formatoptions+=mM
+set mouse=
+set pumheight=10
 set shortmess+=I
 set showtabline=2
-set title
-set wildmenu
-set pumheight=10
 set synmaxcol=300
-set completeopt=menuone,noinsert
+set title
+set updatetime=400
+set wildmenu
 
 "=== Plugins =================================================================
 call plug#begin('~/.vim/plugged')
@@ -111,6 +114,7 @@ Plug 'lighttiger2505/gtags.vim'
 
 call plug#end()
 
+"
 "=== Plugin Settings =======================================================
 let g:loaded_netrwPlugin = 1
 "let g:go_bin_path = expand("~/Application/go/bin")
@@ -129,7 +133,7 @@ let g:extra_whitespace_ignored_filetypes = [
 
 " GUI版VIM時のlightLineの設定
 let g:lightline = {
-  \ 'colorscheme': 'onedark'
+  \ 'colorscheme': 'wombat'
   \ }
 
 " vim-go
