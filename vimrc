@@ -25,8 +25,8 @@ if has('win32')
 endif
 
 " タブ関連
-set tabstop=8
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=0
 set softtabstop=-1
 set expandtab
 set smarttab
@@ -101,14 +101,15 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
-Plug 'lambdalisue/fern.vim'
+"Plug 'lambdalisue/fern.vim'
 "Plug 'scrooloose/nerdtree'
 Plug 'mattn/vim-molder'
 Plug 'mattn/vim-molder-operations'
+Plug 'thinca/vim-quickrun'
 
-Plug 'chase/vim-ansible-yaml'
-Plug 'posva/vim-vue'
-Plug 'Glench/Vim-Jinja2-Syntax'
+"Plug 'chase/vim-ansible-yaml'
+"Plug 'posva/vim-vue'
+"Plug 'Glench/Vim-Jinja2-Syntax'
 
 Plug 'lighttiger2505/gtags.vim'
 
@@ -138,8 +139,8 @@ let g:lightline = {
 
 " vim-go
 "let g:go_fmt_command = 'gofmt'
-let g:go_fmt_command = 'goimports'
-let g:go_fmt_autosave = 1
+" let g:go_fmt_command = 'goimports'
+" let g:go_fmt_autosave = 1
 
 " NERDTree
 let g:NERDTreeIgnore = [
@@ -166,7 +167,7 @@ let g:gen_tags#gtags_auto_gen = 1
 "endif
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
-let g:asyncomplete_popup_delay = 200
+let g:asyncomplete_popup_delay = 100
 
 " Syntastic recommend
 set statusline+=%#warningmsg#
@@ -227,14 +228,6 @@ if !has('win32')
   cmap w!! w !sudo tee > /dev/null %
 endif
 "
-"=== Printer =============================================================
-" プリンターの設定
-if has('printer')
-  set printoptions=paper:A4,left:15mm,right:15mm,top:20mm,bottom:20mm
-  if has('win32')
-    set printfont=MS_Gothic:h10:cSHIFTJIS
-  endif
-endif
 "
 "=== ColorScheme ==========================================================
 colorscheme onedark
@@ -253,6 +246,10 @@ endif
 "highlight ColorColumn ctermbg=242 guibg=#6c6c6c
 "highlight SpecialKey  ctermfg=242 guifg=NONE
 "highlight NonText     ctermfg=Gray guifg=NONE
+
+filetype plugin indent on
+syntax on
+
 
 if has("gui_running")
   "=== Gui(GVim) Settings =============================================================
@@ -286,5 +283,11 @@ if has("gui_running")
   endif
 endif
 
-filetype plugin indent on
-syntax on
+"=== Printer =============================================================
+" プリンターの設定
+if has('printer')
+  set printoptions=paper:A4,left:15mm,right:15mm,top:20mm,bottom:20mm
+  if has('win32')
+    set printfont=MS_Gothic:h10:cSHIFTJIS
+  endif
+endif
