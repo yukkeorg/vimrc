@@ -23,7 +23,6 @@ set noswapfile
 if has('win32')
   set directory=
 endif
-
 " タブ関連
 set tabstop=4
 set shiftwidth=0
@@ -120,7 +119,7 @@ call plug#end()
 let g:loaded_netrwPlugin = 1
 "let g:go_bin_path = expand("~/Application/go/bin")
 
-let g:vim_json_syntax_conceal = 0
+let g:vim_json_conceal = 0
 
 " Whitespace
 let g:extra_whitespace_ignored_filetypes = [
