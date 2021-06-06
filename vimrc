@@ -229,7 +229,7 @@ endif
 "
 "
 "=== ColorScheme ==========================================================
-colorscheme onedark
+colorscheme edge
 set background=dark
 
 if has('termguicolors')
@@ -270,15 +270,15 @@ if has("gui_running")
   " IME動作時の動作
   if has('multi_byte_ime') || has('xim')
     highlight CursorIM guibg=Purple guifg=NONE
-  "   " 挿入モード・検索モードでのデフォルトのIME状態設定
-  "   set iminsert=0 imsearch=0
-  "   if has('xim') && has('GUI_GTK')
-  "     " XIMの入力開始キーを設定:
-  "     " 下記の s-space はShift+Spaceの意味でkinput2+canna用設定
-  "     set imactivatekey=sc-space
-  "   endif
-  "   " 挿入モードでのIME状態を記憶させない場合、次行のコメントを解除
-  "   "inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+    " " 挿入モード・検索モードでのデフォルトのIME状態設定
+    " set iminsert=0 imsearch=0
+    " if has('xim') && has('GUI_GTK')
+    "   " XIMの入力開始キーを設定:
+    "   " 下記の s-space はShift+Spaceの意味でkinput2+canna用設定
+    "   set imactivatekey=sc-space
+    " endif
+    " " 挿入モードでのIME状態を記憶させない場合、次行のコメントを解除
+    " " noremap <silent> <ESC> <ESC>:set iminsert=0<CR>
   endif
 endif
 
