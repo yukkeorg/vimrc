@@ -191,6 +191,10 @@ command! -nargs=0 CD cd %:p:h
 " DiffOrig -- 編集前のファイルとの比較をする。
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
+augroup fileTypeImport
+  au BufRead,BufNewFile *.js setlocal ts=2
+augroup END
+
 "=== Keymap (Normal) ======================================================
 " ハイライトの消去
 nnoremap <ESC><ESC> :noh<CR>
