@@ -81,6 +81,12 @@ set wildmenu
 "=== Plugins =================================================================
 call plug#begin('~/.vim/plugged')
 
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
 Plug 'altercation/vim-colors-solarized'
 Plug 'sjl/badwolf'
 Plug 'w0ng/vim-hybrid'
@@ -88,23 +94,19 @@ Plug 'sainnhe/edge'
 Plug 'cocopon/iceberg.vim'
 Plug 'joshdick/onedark.vim'
 
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+Plug 'itchyny/lightline.vim'
 
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
-"Plug 'lambdalisue/fern.vim'
-"Plug 'scrooloose/nerdtree'
-Plug 'mattn/vim-molder'
-Plug 'mattn/vim-molder-operations'
 Plug 'thinca/vim-quickrun'
+
+Plug 'lambdalisue/fern.vim'
+"Plug 'scrooloose/nerdtree'
+"Plug 'mattn/vim-molder'
+"Plug 'mattn/vim-molder-operations'
 
 "Plug 'chase/vim-ansible-yaml'
 "Plug 'posva/vim-vue'
@@ -116,6 +118,7 @@ call plug#end()
 
 "
 "=== Plugin Settings =======================================================
+" netrwプラグインをロードしないようにする。
 let g:loaded_netrwPlugin = 1
 "let g:go_bin_path = expand("~/Application/go/bin")
 
@@ -142,14 +145,14 @@ let g:lightline = {
 " let g:go_fmt_autosave = 1
 
 " NERDTree
-let g:NERDTreeIgnore = [
-\ '\.pyc$',
-\ '__pycache__',
-\ '\.egg-info'
-\]
+"let g:NERDTreeIgnore = [
+"\ '\.pyc$',
+"\ '__pycache__',
+"\ '\.egg-info'
+"\]
 
 " Dirvish
-let g:dirvish_mode = ':sort ,^.*[\/],'
+" let g:dirvish_mode = ':sort ,^.*[\/],'
 
 " gen_tags.vim
 let g:loaded_gentags#ctags = 1
@@ -162,23 +165,23 @@ let g:gen_tags#gtags_auto_gen = 1
 "  \ 'cmd': {server_info->['pyls']},
 "  \ 'whitelist': ['python'],
 "  \ })
-
 "endif
+
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_popup_delay = 100
 
 " Syntastic recommend
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['mypy']
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_always_populate_loc_list = 0
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_python_checkers = ['mypy']
+" let g:syntastic_javascript_checkers = ['eslint']
 
 " lsp-setting
 "let g:lsp_settings = {}
@@ -204,21 +207,24 @@ nnoremap <silent>j gj
 nnoremap <silent>k gk
 
 " Search時中央に
-nmap n nzz
-nmap N Nzz
-nmap * *zz
-nmap # *zz
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # *zz
+
+" Auto Completion
+" inoremap <expr><Tab> pumvisible() ? '\<C-n>' : '\<Tab>'
+" inoremap <expr><S-Tab> pumvisible() ? '\<C-p>' : '\<S-Tab>'
+" inoremap <expr><cr> pumvisible() ? '\<C-y>' : '\<cr>'
+
+" Fern
+nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=30<CR>
 
 " ショートカット
 nmap <F12> :tabnew $MYVIMRC<CR>
 if has('gui_running')
   nmap <S-F12> :tabnew $MYGVIMRC<CR>
 endif
-
-" Auto Completion
-" inoremap <expr><Tab> pumvisible() ? '\<C-n>' : '\<Tab>'
-" inoremap <expr><S-Tab> pumvisible() ? '\<C-p>' : '\<S-Tab>'
-" inoremap <expr><cr> pumvisible() ? '\<C-y>' : '\<cr>'
 
 "=== Keymap (Insert) ======================================================
 
@@ -227,9 +233,9 @@ endif
 vnoremap <silent> <Enter> :EasyAlign
 
 "=== Keymap (Command) =====================================================
-if !has('win32')
-  cmap w!! w !sudo tee > /dev/null %
-endif
+" if !has('win32')
+"   cmap w!! w !sudo tee >/dev/null %
+" endif
 "
 "
 "=== ColorScheme ==========================================================
@@ -268,7 +274,7 @@ if has("gui_running")
   if has('win32')
     set guifont=HackGen:h11:cSHIFTJIS
   else
-    set guifont=HackGen\ Regular\ 11
+    set guifont=HackGenNerd\ Regular\ 11
   endif
 
   " IME動作時の動作
