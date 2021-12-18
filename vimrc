@@ -87,6 +87,8 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
+Plug 'mattn/vim-goimports'
+
 Plug 'altercation/vim-colors-solarized'
 Plug 'sjl/badwolf'
 Plug 'w0ng/vim-hybrid'
@@ -184,7 +186,7 @@ let g:asyncomplete_popup_delay = 100
 " let g:syntastic_javascript_checkers = ['eslint']
 
 " lsp-setting
-"let g:lsp_settings = {}
+" let g:lsp_settings = {}
 "
 "=== UserCommand =========================================================
 " CdCurrent -- Change directory to path that edited current file.
@@ -213,14 +215,14 @@ nnoremap * *zz
 nnoremap # *zz
 
 " Auto Completion
-" inoremap <expr><Tab> pumvisible() ? '\<C-n>' : '\<Tab>'
-" inoremap <expr><S-Tab> pumvisible() ? '\<C-p>' : '\<S-Tab>'
-" inoremap <expr><cr> pumvisible() ? '\<C-y>' : '\<cr>'
+" inoremap <expr> <Tab>   pumvisible() ? '\<C-n>' : '\<Tab>'
+" inoremap <expr> <S-Tab> pumvisible() ? '\<C-p>' : '\<S-Tab>'
+" inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : '\<cr>'
 
 " Fern
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=30<CR>
 
-" ショートカット
+" 設定ファイル編集ショートカット
 nmap <F12> :tabnew $MYVIMRC<CR>
 if has('gui_running')
   nmap <S-F12> :tabnew $MYGVIMRC<CR>
@@ -233,9 +235,9 @@ endif
 vnoremap <silent> <Enter> :EasyAlign
 
 "=== Keymap (Command) =====================================================
-" if !has('win32')
-"   cmap w!! w !sudo tee >/dev/null %
-" endif
+if !has('win32')
+  cmap w!! w !sudo tee >/dev/null %
+endif
 "
 "
 "=== ColorScheme ==========================================================
