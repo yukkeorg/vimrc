@@ -66,7 +66,7 @@ set wrap
 set wrapscan
 
 " その他
-set colorcolumn=100
+set colorcolumn=119
 set completeopt=menuone,noinsert
 set formatoptions+=mM
 set mouse=
@@ -81,14 +81,17 @@ set wildmenu
 "=== Plugins =================================================================
 call plug#begin('~/.vim/plugged')
 
+" Language Server Plugin関連
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
-Plug 'mattn/vim-goimports'
+" StatusLine関連
+Plug 'itchyny/lightline.vim'
 
+" Theme関連
 Plug 'altercation/vim-colors-solarized'
 Plug 'sjl/badwolf'
 Plug 'w0ng/vim-hybrid'
@@ -96,25 +99,29 @@ Plug 'sainnhe/edge'
 Plug 'cocopon/iceberg.vim'
 Plug 'joshdick/onedark.vim'
 
-Plug 'itchyny/lightline.vim'
-
+" 整形等
+Plug 'mattn/vim-goimports'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/vim-easy-align'
 Plug 'mattn/emmet-vim'
-Plug 'thinca/vim-quickrun'
+Plug 'cohama/lexima.vim'
+Plug 'machakann/vim-sandwich'
+Plug 'tpope/vim-surround'
 
-Plug 'lambdalisue/fern.vim'
-"Plug 'scrooloose/nerdtree'
-"Plug 'mattn/vim-molder'
-"Plug 'mattn/vim-molder-operations'
-
+" ハイライト関連
 "Plug 'chase/vim-ansible-yaml'
 "Plug 'posva/vim-vue'
 "Plug 'Glench/Vim-Jinja2-Syntax'
 
-Plug 'lighttiger2505/gtags.vim'
+" その他
+Plug 'thinca/vim-quickrun'
+Plug 'lambdalisue/fern.vim'
+"Plug 'scrooloose/nerdtree'
+"Plug 'mattn/vim-molder'
+"Plug 'mattn/vim-molder-operations'
+"Plug 'lighttiger2505/gtags.vim'
 
 call plug#end()
 
@@ -125,6 +132,35 @@ let g:loaded_netrwPlugin = 1
 "let g:go_bin_path = expand("~/Application/go/bin")
 
 let g:vim_json_conceal = 0
+
+" lsp-setting
+let g:lsp_settings = {
+  \  'pylsp-all': {
+  \    'workspace_config': {
+  \      'pylsp': {
+  \        'configurationSources': ['flake8'],
+  \        'plugins': {
+  \          'flake8': {
+  \            'enabled': 1,
+  \            'max-line-length': 119,
+  \          },
+  \          'mccabe': {
+  \            'enabled': 0
+  \          },
+  \          'pycodestyle': {
+  \            'enabled': 0,
+  \            'ignored': [],
+  \            'max-line-length': 119,
+  \          },
+  \          'pyflakes': {
+  \            'enabled': 0
+  \          }
+  \        }
+  \      }
+  \    }
+  \  }
+  \}
+
 
 " Whitespace
 let g:extra_whitespace_ignored_filetypes = [
@@ -160,15 +196,7 @@ let g:lightline = {
 let g:loaded_gentags#ctags = 1
 let g:gen_tags#gtags_auto_gen = 1
 
-" lsp-python
-"if executable('pyls')
-"  au User lsp_setup call lsp#register_server({
-"  \ 'name': 'pyls',
-"  \ 'cmd': {server_info->['pyls']},
-"  \ 'whitelist': ['python'],
-"  \ })
-"endif
-
+" LSP
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_popup_delay = 100
@@ -185,9 +213,6 @@ let g:asyncomplete_popup_delay = 100
 " let g:syntastic_python_checkers = ['mypy']
 " let g:syntastic_javascript_checkers = ['eslint']
 
-" lsp-setting
-" let g:lsp_settings = {}
-"
 "=== UserCommand =========================================================
 " CdCurrent -- Change directory to path that edited current file.
 "              backport from cmdex.vim in Kaoriya edited Vim.
@@ -235,9 +260,9 @@ endif
 vnoremap <silent> <Enter> :EasyAlign
 
 "=== Keymap (Command) =====================================================
-if !has('win32')
-  cmap w!! w !sudo tee >/dev/null %
-endif
+" if !has('win32')
+"   cmap w!! w !sudo tee >/dev/null %
+" endif
 "
 "
 "=== ColorScheme ==========================================================
@@ -260,7 +285,7 @@ endif
 
 filetype plugin indent on
 syntax on
-
+autocmd BufEnter * :syntax sync fromstart
 
 if has("gui_running")
   "=== Gui(GVim) Settings =============================================================
