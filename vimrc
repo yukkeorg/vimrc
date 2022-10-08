@@ -93,21 +93,21 @@ Plug 'itchyny/lightline.vim'
 
 " Theme関連
 Plug 'altercation/vim-colors-solarized'
-Plug 'sjl/badwolf'
-Plug 'w0ng/vim-hybrid'
-Plug 'sainnhe/edge'
 Plug 'cocopon/iceberg.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/edge'
+Plug 'sjl/badwolf'
+Plug 'w0ng/vim-hybrid'
 
 " 整形等
-Plug 'mattn/vim-goimports'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'junegunn/vim-easy-align'
-Plug 'mattn/emmet-vim'
 Plug 'cohama/lexima.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'machakann/vim-sandwich'
+Plug 'mattn/emmet-vim'
+Plug 'mattn/vim-goimports'
 Plug 'tpope/vim-surround'
 
 " ハイライト関連
@@ -118,6 +118,8 @@ Plug 'tpope/vim-surround'
 " その他
 Plug 'thinca/vim-quickrun'
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 "Plug 'scrooloose/nerdtree'
 "Plug 'mattn/vim-molder'
 "Plug 'mattn/vim-molder-operations'
@@ -213,6 +215,10 @@ let g:asyncomplete_popup_delay = 100
 " let g:syntastic_python_checkers = ['mypy']
 " let g:syntastic_javascript_checkers = ['eslint']
 
+" Fern
+nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=30<CR>
+let g:fern#renderer = 'nerdfont'
+
 "=== UserCommand =========================================================
 " CdCurrent -- Change directory to path that edited current file.
 "              backport from cmdex.vim in Kaoriya edited Vim.
@@ -244,8 +250,6 @@ nnoremap # *zz
 " inoremap <expr> <S-Tab> pumvisible() ? '\<C-p>' : '\<S-Tab>'
 " inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : '\<cr>'
 
-" Fern
-nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=30<CR>
 
 " 設定ファイル編集ショートカット
 nmap <F12> :tabnew $MYVIMRC<CR>
