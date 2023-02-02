@@ -114,6 +114,7 @@ Plug 'tpope/vim-surround'
 "Plug 'chase/vim-ansible-yaml'
 "Plug 'posva/vim-vue'
 "Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'ziglang/zig.vim'
 
 " その他
 Plug 'thinca/vim-quickrun'
@@ -236,8 +237,22 @@ augroup END
 nnoremap <ESC><ESC> :noh<CR>
 
 " 上下カーソル移動を論理移動に
-nnoremap <silent>j gj
-nnoremap <silent>k gk
+nmap gj gj<SID>g
+nmap gk gk<SID>g
+nnoremap <script> <SID>gj gj<SID>g
+nnoremap <script> <SID>gk gk<SID>g
+nmap <SID>g <nop>
+
+" ウインドウサイズ変更
+nmap <C-w>+ <C-w>+<SID>ws
+nmap <C-w>- <C-w>-<SID>ws
+nmap <C-w>> <C-w>><SID>ws
+nmap <C-w>< <C-w><<SID>ws
+nnoremap <script> <SID>ws+ <C-w>+<SID>ws
+nnoremap <script> <SID>ws- <C-w>-<SID>ws
+nnoremap <script> <SID>ws> <C-w>><SID>ws
+nnoremap <script> <SID>ws< <C-w><<SID>ws
+nmap <SID>ws <Nop>
 
 " Search時中央に
 nnoremap n nzz
@@ -267,8 +282,7 @@ vnoremap <silent> <Enter> :EasyAlign
 " if !has('win32')
 "   cmap w!! w !sudo tee >/dev/null %
 " endif
-"
-"
+
 "=== ColorScheme ==========================================================
 colorscheme edge
 set background=dark
@@ -294,7 +308,7 @@ autocmd BufEnter * :syntax sync fromstart
 if has("gui_running")
   "=== Gui(GVim) Settings =============================================================
   set columns=130
-  set lines=30
+  set lines=70
   set guioptions=aiM
   set mouse=a
   set mousehide
@@ -306,20 +320,6 @@ if has("gui_running")
     set guifont=HackGen:h11:cSHIFTJIS
   else
     set guifont=HackGenNerd\ Regular\ 11
-  endif
-
-  " IME動作時の動作
-  if has('multi_byte_ime') || has('xim')
-    highlight CursorIM guibg=Purple guifg=NONE
-    " " 挿入モード・検索モードでのデフォルトのIME状態設定
-    " set iminsert=0 imsearch=0
-    " if has('xim') && has('GUI_GTK')
-    "   " XIMの入力開始キーを設定:
-    "   " 下記の s-space はShift+Spaceの意味でkinput2+canna用設定
-    "   set imactivatekey=sc-space
-    " endif
-    " " 挿入モードでのIME状態を記憶させない場合、次行のコメントを解除
-    " " noremap <silent> <ESC> <ESC>:set iminsert=0<CR>
   endif
 endif
 
