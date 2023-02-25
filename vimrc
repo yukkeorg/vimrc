@@ -1,7 +1,7 @@
 " vim: et ts=2 sts=2 sw=2 tw=0
 "=== Initialize ===========================================================
 scriptencoding utf-8
-set encoding=utf-8
+set encoding=UTF-8
 set nocompatible
 filetype off
 filetype plugin indent off
@@ -9,7 +9,7 @@ filetype plugin indent off
 "=== Global Settings ======================================================
 
 " VIMの動作
-set ambiwidth=double
+"set ambiwidth=double
 set cursorline
 set fileencoding=utf-8
 set fileencodings=utf-8,cp932,sjis
@@ -73,7 +73,7 @@ set mouse=
 set pumheight=10
 set shortmess+=I
 set showtabline=2
-set synmaxcol=300
+set synmaxcol=0
 set title
 set updatetime=400
 set wildmenu
@@ -90,6 +90,8 @@ Plug 'mattn/vim-lsp-settings'
 
 " StatusLine関連
 Plug 'itchyny/lightline.vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 " Theme関連
 Plug 'altercation/vim-colors-solarized'
@@ -102,7 +104,8 @@ Plug 'w0ng/vim-hybrid'
 " 整形等
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
-Plug 'bronson/vim-trailing-whitespace'
+" Plug 'bronson/vim-trailing-whitespace'
+Plug 'yukkeorg/vim-trailing-whitespace'
 Plug 'cohama/lexima.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'machakann/vim-sandwich'
@@ -121,11 +124,12 @@ Plug 'thinca/vim-quickrun'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'ryanoasis/vim-devicons'
 "Plug 'scrooloose/nerdtree'
 "Plug 'mattn/vim-molder'
 "Plug 'mattn/vim-molder-operations'
 "Plug 'lighttiger2505/gtags.vim'
-
+Plug 'rbtnn/vim-ambiwidth'
 call plug#end()
 
 "
@@ -136,6 +140,11 @@ let g:loaded_netrwPlugin = 1
 
 let g:vim_json_conceal = 0
 
+" vim-ambiwidth
+let g:ambiwidth_cica_enabled = 1
+" let g:ambiwidth_add_list = [
+" \ ]
+
 " lsp-setting
 let g:lsp_settings = {
   \  'pylsp-all': {
@@ -145,7 +154,7 @@ let g:lsp_settings = {
   \        'plugins': {
   \          'flake8': {
   \            'enabled': 1,
-  \            'max-line-length': 119,
+ \            'max-line-length': 119,
   \          },
   \          'mccabe': {
   \            'enabled': 0
@@ -167,8 +176,8 @@ let g:lsp_settings = {
 
 " Whitespace
 let g:extra_whitespace_ignored_filetypes = [
-  \ 'vim-plug',
-  \ ]
+\   'vim-plug',
+\ ]
 
 " autocmd VimEnter * NERDTree
 " autocmd VimEnter * wincmd p
@@ -196,8 +205,8 @@ let g:lightline = {
 " let g:dirvish_mode = ':sort ,^.*[\/],'
 
 " gen_tags.vim
-let g:loaded_gentags#ctags = 1
-let g:gen_tags#gtags_auto_gen = 1
+" let g:loaded_gentags#ctags = 1
+" let g:gen_tags#gtags_auto_gen = 1
 
 " LSP
 let g:lsp_diagnostics_enabled = 1
@@ -217,8 +226,19 @@ let g:asyncomplete_popup_delay = 100
 " let g:syntastic_javascript_checkers = ['eslint']
 
 " Fern
+"let g:fern#renderer = "nerdfont"
+
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=30<CR>
-let g:fern#renderer = 'nerdfont'
+
+function! s:init_fern()
+  setlocal norelativenumber
+  setlocal nonumber
+endfunction
+
+augroup fernCustom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
 
 "=== UserCommand =========================================================
 " CdCurrent -- Change directory to path that edited current file.
@@ -304,6 +324,7 @@ endif
 filetype plugin indent on
 syntax on
 autocmd BufEnter * :syntax sync fromstart
+" set t_Co=256
 
 if has("gui_running")
   "=== Gui(GVim) Settings =============================================================
