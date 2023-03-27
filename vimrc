@@ -1,19 +1,17 @@
 " vim: et ts=2 sts=2 sw=2 tw=0
 "=== Initialize ===========================================================
-scriptencoding utf-8
+scriptencoding UTF-8
 set encoding=UTF-8
 set nocompatible
-filetype off
-filetype plugin indent off
 
 "=== Global Settings ======================================================
 
 " VIMの動作
 "set ambiwidth=double
-set cursorline
 set fileencoding=utf-8
 set fileencodings=utf-8,cp932,sjis
 set fileformats=unix,dos,mac
+set cursorline
 set noerrorbells
 set visualbell t_vb=
 
@@ -23,6 +21,7 @@ set noswapfile
 if has('win32')
   set directory=
 endif
+
 " タブ関連
 set tabstop=4
 set shiftwidth=0
@@ -56,7 +55,7 @@ set backspace=indent,eol,start
 set list
 set listchars=tab:>-,extends:<,trail:-
 set number
-set numberwidth=6
+set numberwidth=4
 set ruler
 set signcolumn=yes
 set splitbelow
@@ -104,8 +103,8 @@ Plug 'w0ng/vim-hybrid'
 " 整形等
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
-" Plug 'bronson/vim-trailing-whitespace'
-Plug 'yukkeorg/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace'
+" Plug 'yukkeorg/vim-trailing-whitespace'
 Plug 'cohama/lexima.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'machakann/vim-sandwich'
@@ -124,12 +123,15 @@ Plug 'thinca/vim-quickrun'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/glyph-palette.vim'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'scrooloose/nerdtree'
 "Plug 'mattn/vim-molder'
 "Plug 'mattn/vim-molder-operations'
 "Plug 'lighttiger2505/gtags.vim'
 Plug 'rbtnn/vim-ambiwidth'
+Plug 'github/copilot.vim'
+
 call plug#end()
 
 "
@@ -142,8 +144,7 @@ let g:vim_json_conceal = 0
 
 " vim-ambiwidth
 let g:ambiwidth_cica_enabled = 1
-" let g:ambiwidth_add_list = [
-" \ ]
+let g:ambiwidth_add_list = []
 
 " lsp-setting
 let g:lsp_settings = {
@@ -154,7 +155,7 @@ let g:lsp_settings = {
   \        'plugins': {
   \          'flake8': {
   \            'enabled': 1,
- \            'max-line-length': 119,
+  \            'max-line-length': 119,
   \          },
   \          'mccabe': {
   \            'enabled': 0
@@ -177,6 +178,7 @@ let g:lsp_settings = {
 " Whitespace
 let g:extra_whitespace_ignored_filetypes = [
 \   'vim-plug',
+\   'fern'
 \ ]
 
 " autocmd VimEnter * NERDTree
@@ -226,7 +228,7 @@ let g:asyncomplete_popup_delay = 100
 " let g:syntastic_javascript_checkers = ['eslint']
 
 " Fern
-"let g:fern#renderer = "nerdfont"
+" let g:fern#renderer = "nerdfont"
 
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=30<CR>
 
@@ -321,13 +323,13 @@ endif
 "highlight SpecialKey  ctermfg=242 guifg=NONE
 "highlight NonText     ctermfg=Gray guifg=NONE
 
+set t_Co=256
 filetype plugin indent on
 syntax on
 autocmd BufEnter * :syntax sync fromstart
-" set t_Co=256
 
 if has("gui_running")
-  "=== Gui(GVim) Settings =============================================================
+"=== Gui(GVim) Settings ==================================================
   set columns=130
   set lines=70
   set guioptions=aiM
@@ -336,7 +338,7 @@ if has("gui_running")
   set nomousefocus
   set visualbell t_vb=
 
-  "=== Functions & Scripts ===================================================
+"=== Functions & Scripts =================================================
   if has('win32')
     set guifont=HackGen:h11:cSHIFTJIS
   else
@@ -345,7 +347,6 @@ if has("gui_running")
 endif
 
 "=== Printer =============================================================
-" プリンターの設定
 if has('printer')
   set printoptions=paper:A4,left:15mm,right:15mm,top:20mm,bottom:20mm
   if has('win32')
