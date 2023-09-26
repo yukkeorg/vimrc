@@ -104,13 +104,13 @@ Plug 'w0ng/vim-hybrid'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
-" Plug 'yukkeorg/vim-trailing-whitespace'
-Plug 'cohama/lexima.vim'
+"Plug 'cohama/lexima.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'machakann/vim-sandwich'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/vim-goimports'
 Plug 'tpope/vim-surround'
+Plug 'psf/black'
 
 " ハイライト関連
 "Plug 'chase/vim-ansible-yaml'
@@ -118,8 +118,7 @@ Plug 'tpope/vim-surround'
 "Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'ziglang/zig.vim'
 
-" その他
-Plug 'thinca/vim-quickrun'
+" ファイラー関連
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
@@ -128,6 +127,9 @@ Plug 'ryanoasis/vim-devicons'
 "Plug 'scrooloose/nerdtree'
 "Plug 'mattn/vim-molder'
 "Plug 'mattn/vim-molder-operations'
+
+" その他
+"Plug 'thinca/vim-quickrun'
 "Plug 'lighttiger2505/gtags.vim'
 Plug 'rbtnn/vim-ambiwidth'
 Plug 'github/copilot.vim'
@@ -138,42 +140,12 @@ call plug#end()
 "=== Plugin Settings =======================================================
 " netrwプラグインをロードしないようにする。
 let g:loaded_netrwPlugin = 1
-"let g:go_bin_path = expand("~/Application/go/bin")
 
 let g:vim_json_conceal = 0
 
 " vim-ambiwidth
 let g:ambiwidth_cica_enabled = 1
 let g:ambiwidth_add_list = []
-
-" lsp-setting
-let g:lsp_settings = {
-  \  'pylsp-all': {
-  \    'workspace_config': {
-  \      'pylsp': {
-  \        'configurationSources': ['flake8'],
-  \        'plugins': {
-  \          'flake8': {
-  \            'enabled': 1,
-  \            'max-line-length': 119,
-  \          },
-  \          'mccabe': {
-  \            'enabled': 0
-  \          },
-  \          'pycodestyle': {
-  \            'enabled': 0,
-  \            'ignored': [],
-  \            'max-line-length': 119,
-  \          },
-  \          'pyflakes': {
-  \            'enabled': 0
-  \          }
-  \        }
-  \      }
-  \    }
-  \  }
-  \}
-
 
 " Whitespace
 let g:extra_whitespace_ignored_filetypes = [
@@ -210,12 +182,42 @@ let g:lightline = {
 " let g:loaded_gentags#ctags = 1
 " let g:gen_tags#gtags_auto_gen = 1
 
-" LSP
+" -- LSP -----------------------------------------------------------------
 let g:lsp_diagnostics_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_float_enabled = 1
+let g:lsp_signs_enabled = 1
+"let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_virtual_text_enabled = 1
 let g:asyncomplete_popup_delay = 100
 
-" Syntastic recommend
+let g:lsp_settings = {
+  \  'pylsp-all': {
+  \    'workspace_config': {
+  \      'pylsp': {
+  \        'configurationSources': ['flake8'],
+  \        'plugins': {
+  \          'flake8': {
+  \            'enabled': 1,
+  \            'max-line-length': 119,
+  \          },
+  \          'mccabe': {
+  \            'enabled': 0
+  \          },
+  \          'pycodestyle': {
+  \            'enabled': 0,
+  \            'ignored': [],
+  \            'max-line-length': 119,
+  \          },
+  \          'pyflakes': {
+  \            'enabled': 0
+  \          }
+  \        }
+  \      }
+  \    }
+  \  }
+  \}
+
+" -- Syntastic recommend -------------------------------------------------
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
@@ -227,8 +229,8 @@ let g:asyncomplete_popup_delay = 100
 " let g:syntastic_python_checkers = ['mypy']
 " let g:syntastic_javascript_checkers = ['eslint']
 
-" Fern
-" let g:fern#renderer = "nerdfont"
+" -- Fern ----------------------------------------------------------------
+let g:fern#renderer = "nerdfont"
 
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=30<CR>
 
@@ -287,7 +289,6 @@ nnoremap # *zz
 " inoremap <expr> <S-Tab> pumvisible() ? '\<C-p>' : '\<S-Tab>'
 " inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : '\<cr>'
 
-
 " 設定ファイル編集ショートカット
 nmap <F12> :tabnew $MYVIMRC<CR>
 if has('gui_running')
@@ -306,6 +307,8 @@ vnoremap <silent> <Enter> :EasyAlign
 " endif
 
 "=== ColorScheme ==========================================================
+let g:colors_name = ''
+
 colorscheme edge
 set background=dark
 
@@ -328,8 +331,8 @@ filetype plugin indent on
 syntax on
 autocmd BufEnter * :syntax sync fromstart
 
-if has("gui_running")
 "=== Gui(GVim) Settings ==================================================
+if has("gui_running")
   set columns=130
   set lines=70
   set guioptions=aiM
@@ -338,9 +341,8 @@ if has("gui_running")
   set nomousefocus
   set visualbell t_vb=
 
-"=== Functions & Scripts =================================================
   if has('win32')
-    set guifont=HackGen:h11:cSHIFTJIS
+    set guifont=HackGenNerd:h11:cSHIFTJIS
   else
     set guifont=HackGenNerd\ Regular\ 11
   endif
