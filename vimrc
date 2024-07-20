@@ -86,6 +86,8 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+" Plug 'psf/black'
+" Plug 'rust-lang/rust.vim'
 
 " StatusLine関連
 Plug 'itchyny/lightline.vim'
@@ -99,6 +101,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'sainnhe/edge'
 Plug 'sjl/badwolf'
 Plug 'w0ng/vim-hybrid'
+Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
 
 " 整形等
 Plug 'Yggdroot/indentLine'
@@ -110,7 +113,6 @@ Plug 'machakann/vim-sandwich'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/vim-goimports'
 Plug 'tpope/vim-surround'
-" Plug 'psf/black'
 
 " ハイライト関連
 "Plug 'chase/vim-ansible-yaml'
@@ -132,7 +134,7 @@ Plug 'lambdalisue/glyph-palette.vim'
 "Plug 'thinca/vim-quickrun'
 "Plug 'lighttiger2505/gtags.vim'
 Plug 'rbtnn/vim-ambiwidth'
-Plug 'github/copilot.vim'
+" lug 'github/copilot.vim'
 
 call plug#end()
 
@@ -284,7 +286,7 @@ nnoremap N Nzz
 nnoremap * *zz
 nnoremap # *zz
 
-" Auto Completion
+" auto Completion
 " inoremap <expr> <Tab>   pumvisible() ? '\<C-n>' : '\<Tab>'
 " inoremap <expr> <S-Tab> pumvisible() ? '\<C-p>' : '\<S-Tab>'
 " inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : '\<cr>'
@@ -298,7 +300,7 @@ endif
 "=== Keymap (Insert) ======================================================
 
 "=== Keymap (Visual) ======================================================
-" ビジュアルモード時のEnterでEasyAlign起動
+" ビジュアルモード時EnterでEasyAlign起動
 vnoremap <silent> <Enter> :EasyAlign
 
 "=== Keymap (Command) =====================================================
@@ -310,6 +312,7 @@ vnoremap <silent> <Enter> :EasyAlign
 let g:colors_name = ''
 
 colorscheme edge
+" colorscheme moonfly
 set background=dark
 
 if has('termguicolors')
