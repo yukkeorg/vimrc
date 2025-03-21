@@ -118,7 +118,7 @@ Plug 'tpope/vim-surround'
 "Plug 'chase/vim-ansible-yaml'
 "Plug 'posva/vim-vue'
 "Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'ziglang/zig.vim'
+"Plug 'ziglang/zig.vim'
 
 " ファイラー関連
 Plug 'lambdalisue/fern.vim'
@@ -126,7 +126,7 @@ Plug 'lambdalisue/nerdfont.vim'
 "Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 "Plug 'ryanoasis/vim-devicons'
-"Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 "Plug 'mattn/vim-molder'
 "Plug 'mattn/vim-molder-operations'
 
@@ -218,6 +218,8 @@ let g:lsp_settings = {
   \    }
   \  }
   \}
+
+let g:lsp_settings_filetype_typescript = ['biome']
 
 " -- Syntastic recommend -------------------------------------------------
 " set statusline+=%#warningmsg#
